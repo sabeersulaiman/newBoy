@@ -98,5 +98,68 @@ module.exports = function UserControl(UserModel) {
     )
   }
 
+  UserController.getProfile = function(req, res) {
+    let id = req.params.id;
+    let q = UserModel.findById(id).exec();
+    q.then(
+      user => {
+        if(!user) {
+          return res.json(User.respond("UC200", "User not found"));
+          return;
+        }
+
+        let r = User.respond("UC100", "User details fetched.");
+        r.data = User.getUserData(user);
+        res.json(r);
+      }
+    )
+    .catch(
+      e => {
+        console.log(e);
+        res.json(User.respond("UC300", "Failed"));
+      }
+    )
+  }
+
+  UserController.updateProfile = function(req, res) {
+    let oldUser = req.body;
+    let q = UserModel.findById(oldUser.id).exec();
+    
+    q.then(
+      user => {
+        if(!user) {
+          return res.json(User.respond("UD200", "User not found"));
+          return;
+        }
+
+        user.firstName = oldUser.firstName;
+        user.lastName = oldUser.lastName;
+        user.bio = oldUser.bio;
+        user.location = oldUser.location;
+
+        let nq = user.save();
+        nq.then(
+          nu => {
+            let r = User.respond("UD100", "Success");
+            r.data = User.getUserData(nu);
+            res.json(r);
+          }
+        )
+        .catch(
+          e => {
+            console.log(e);
+            res.json(User.respond("UD300", "Failed"));
+          }
+        )
+      }
+    )
+    .catch(
+      e => {
+        console.log(e);
+        res.json(User.respond("UD300", "Failed"));
+      }
+    )
+  }
+
   return UserController;
 };
