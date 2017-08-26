@@ -10,5 +10,6 @@ const UserController = require('../Controllers/UserController')(UserModel);
 
 router.post('/signUp', bodyParser.json(), UserController.signUp);
 router.post('/login', bodyParser.json(), UserController.login);
+router.get('/', (req, res) => res.json("jbdsjkd"));
 
 module.exports = router;
