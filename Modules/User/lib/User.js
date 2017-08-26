@@ -41,6 +41,7 @@ module.exports = {
       lastName: user.lastName,
       profilePicture: user.profilePicture,
       bio: user.bio,
+      location: user.location,
       locationName: user.locationName
     }
   }
