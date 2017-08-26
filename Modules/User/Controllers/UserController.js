@@ -81,7 +81,7 @@ module.exports = function UserControl(UserModel) {
     let q = UserModel.find({email: email, password: password}).exec();
     q.then(
       users => {
-        if(data.length === 0) {
+        if(users.length === 0) {
           res.json("UB200", "Not a user.");
           return;
         }
