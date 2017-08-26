@@ -1,0 +1,2 @@
+--recursive
+Modules/**/Test/**/*.js

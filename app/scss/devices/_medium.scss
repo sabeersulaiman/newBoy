@@ -1,0 +1,24 @@
+// Medium devices (tablets, 768px and up)
+@include media-breakpoint-up(md) {
+    #intro {
+        background-size: cover;
+    }
+
+    .explain {
+        align-items: center;
+        height: 100%;
+
+        p {
+            font-size: 1em;
+        }
+        button {
+            font-size: 1.1em;
+            padding: .8em;
+        }
+    }
+    .present {
+        h1 {
+            font-size: 3em;
+        }
+    }
+}

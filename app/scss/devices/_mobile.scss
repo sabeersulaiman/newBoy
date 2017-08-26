@@ -1,0 +1,17 @@
+@include media-breakpoint-up(xs) {
+    .present {
+        h1 {
+            font-size: 2em;
+        }
+    }
+
+    .explain {
+        p {
+            padding: 20px;
+            font-size: 1em;
+        }
+        button {
+            padding: 1em;
+        }
+    }
+}

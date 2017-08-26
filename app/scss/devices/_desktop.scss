@@ -1,0 +1,8 @@
+// Large devices (desktops, 992px and up)
+@include media-breakpoint-up(lg) {
+    .explain {
+        p {
+            font-size: 1.3em;
+        }
+    }
+}

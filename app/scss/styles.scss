@@ -1,0 +1,57 @@
+// Vars
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "globals.main";
+@import "mixins";
+@import "animations";
+@import "devices/mobile";
+@import "devices/medium";
+@import "devices/desktop";
+@import "devices/large";
+
+$bold: 400;
+$bolder: 500;
+
+
+body {
+    background: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+}
+
+input[placeholder] {
+    font-family: inherit;
+}
+
+//Header
+.header {
+    background: #fff;
+    color: $color-primary;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 56px;
+    .container {
+        display: flex;
+    }
+    .item{
+        height: 60px;
+        .content {
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        &.logo {
+            img {
+                width: 30px;
+                padding-bottom: 3px;
+            }
+        }
+    }
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}

@@ -1,0 +1,102 @@
+// Vars
+$color-primary: #149B4E;
+$accent-color: #EAC200;
+$font-color: #505050;
+$error-color: #FF6040;
+$z-topest: 11000;
+$z-overlay: 10000;
+$z-navigation: 9999;
+$z-common: 1000;
+
+@import "mixins";
+
+body {
+    @include transition();
+    color: $font-color;
+}
+
+a.primary-button {
+    font-weight: 500;
+    font-size: 1em;
+    padding: 10px;
+    cursor: pointer;
+    background: $color-primary;
+    color: #fff !important;
+    display: block;
+    text-align: center;
+}
+
+img.poster {
+    display: block;
+    width: 50%;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+.form-mango {
+    input {
+        border: 1px solid #c4c4c4;
+        padding: 10px;
+        padding-left: 30px;
+        width: 100%;
+        font-size: 1em;
+        display: block;
+        margin-bottom: 10px;
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 8px;
+    }
+}
+
+.notifier{
+    z-index: $z-topest;
+    width: 30%;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-left: 3px solid $color-primary;
+    display: flex;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.07);
+    justify-content: space-between;
+    @include border-radius(3px);
+    animation: slideLeft 0.5s;
+    &.inactive {
+        animation: slideRight .5s forwards;
+    }
+    &.error {
+        border-left: 3px solid $error-color;
+    }
+    .text {
+        padding: 20px;
+        color: $font-color;
+    }
+    .action {
+        &.error{
+            background: $error-color;
+        }
+        cursor: pointer;
+        @include border-radius(0 3px 3px 0);
+        background: $color-primary;
+        padding: 0 5px;
+        display: flex;
+        align-items: center;
+        i {
+            color: #fff;
+        }
+    }
+}
+
+input[placeholder]{
+    font-family: inherit;
+    color: $font-color;
+    font-size: 1em;
+    font-weight: 200;
+}
+
+input[value] {
+    font-family: inherit;
+    color: $font-color;
+    font-size: 1em;
+}
