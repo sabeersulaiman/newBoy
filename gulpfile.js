@@ -83,7 +83,7 @@ gulp.task('browserSync', () => {
     //     }
     // })
     browserSync.init({
-		proxy: "http://localhost:3000",
+		proxy: "http://localhost:3001",
         port: 4000
 	})
 })
