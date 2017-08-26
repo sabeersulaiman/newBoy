@@ -1,7 +1,6 @@
 "use strict"
 
 const m = require('mithril')
-const Navigation = require('../components/Navigation');
 
 const Home = {
     oninit : () => {
