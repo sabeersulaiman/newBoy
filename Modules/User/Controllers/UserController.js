@@ -82,7 +82,7 @@ module.exports = function UserControl(UserModel) {
     q.then(
       users => {
         if(users.length === 0) {
-          res.json("UB200", "Not a user.");
+          res.json(User.respond("UB200", "Not a user."));
           return;
         }
 
@@ -93,7 +93,7 @@ module.exports = function UserControl(UserModel) {
       }
     ).catch(
       e => {
-        res.json("UB300", "Failed");
+        res.json(User.respond("UB300", "Failed"));
       }
     )
   }
